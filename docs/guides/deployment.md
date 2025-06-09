@@ -189,13 +189,13 @@ You should now be able to view your Mesop app at http://localhost:8080.
 
 ### Deploying behind a reverse proxy
 
-If you serve your Mesop app behind a reverse proxy at a custom path, set `MESOP_BASE_URL_PATH` to that path. For example, if the proxy routes requests under `/myapp` to Mesop, run the server with:
+If you serve your Mesop app behind a reverse proxy at a custom path, set `MESOP_BASE_URL_PATH` to that path. For example, if the proxy routes requests under `/myapppath` to Mesop, run the server with:
 
 ```sh
-MESOP_BASE_URL_PATH=/myapp docker-compose up -d
+MESOP_BASE_URL_PATH=/myapppath docker-compose up -d
 ```
 
-All routes, including the UI endpoint and static assets, will then be served from `/myapp`.
+All routes, including the UI endpoint and static assets, will then be served from `/myapppath`.
 
 
 ## Hugging Face Spaces
