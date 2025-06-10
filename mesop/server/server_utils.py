@@ -18,7 +18,7 @@ from mesop.server.config import app_config
 
 
 def prefix_base_url(path: str) -> str:
-  base = MESOP_BASE_URL_PATH.rstrip("/")
+  base = MESOP_BASE_URL_PATH
   if not path.startswith("/"):
     path = "/" + path
   return base + path if base else path
