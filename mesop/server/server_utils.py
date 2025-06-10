@@ -3,7 +3,8 @@ import json
 import os
 import secrets
 import urllib.parse as urlparse
-from typing import Any, Generator, Iterable
+from collections.abc import Generator, Iterable
+from typing import Any
 from urllib import request as urllib_request
 
 from flask import Response
@@ -20,11 +21,7 @@ def prefix_base_url(path: str) -> str:
   base = MESOP_BASE_URL_PATH.rstrip("/")
   if not path.startswith("/"):
     path = "/" + path
-  if base:
-    if path == "/":
-      return base + "/"
-    return base + path
-  return path
+  return base + path if base else path
 
 
 def remove_base_url_path(path: str) -> str:
