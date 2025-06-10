@@ -4,7 +4,7 @@ export function prefixBasePath(path: string): string {
     return path;
   }
   if (!path.startsWith('/')) {
-    path = '/' + path;
+    path = `/${path}`;
   }
   if (base.endsWith('/')) {
     return base + path.substring(1);
